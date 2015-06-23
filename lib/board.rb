@@ -1,3 +1,4 @@
+require_relative("bishop.rb")
 require_relative("rook.rb")
 
 class Board
@@ -11,6 +12,11 @@ class Board
     @board[7][0] = Rook.new(7, 0)
     @board[0][7] = Rook.new(0, 7)
     @board[7][7] = Rook.new(7, 7)
+
+    @board[2][0] = Bishop.new(2, 0)
+    @board[5][0] = Bishop.new(5, 0)
+    @board[2][7] = Bishop.new(2, 7)
+    @board[5][7] = Bishop.new(5, 7)
   end
 
   def valid_move?(start, endd)

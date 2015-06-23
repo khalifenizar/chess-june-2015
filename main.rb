@@ -20,22 +20,25 @@ moves = [
   # valid rook moves
   { :start => [ 0, 0 ], :end => [ 0, 4 ], :expected => true },
   { :start => [ 7, 7 ], :end => [ 7, 3 ], :expected => true },
+
+  # invalid bishop moves
+  { :start => [ 2, 0 ], :end => [ 6, 2 ], :expected => false },
+  { :start => [ 2, 7 ], :end => [ 2, 3 ], :expected => false },
+
+  # valid bishop moves
+  { :start => [ 2, 0 ], :end => [ 5, 3 ], :expected => true },
+  { :start => [ 2, 7 ], :end => [ 0, 5 ], :expected => true },
 ]
 
 moves.each do |move|
   result = board.valid_move?(move[:start], move[:end])
   if result == move[:expected]
-    conclusion = "OK"
+    conclusion = "ok"
   else
-    conclusion = "WTF"
+    conclusion = "WTF BBQ"
   end
   puts "#{conclusion}: #{move[:start]} --> #{move[:end]} = #{result}"
 end
-
-# a1 => 0, 0
-# h1 => 7, 0
-# a8 => 0, 7
-# h8 => 7, 7
 
 # a b c d e f g h
 # 0 1 2 3 4 5 6 7

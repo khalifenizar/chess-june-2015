@@ -1,8 +1,11 @@
 require_relative("piece.rb")
 
-class Rook < Piece
+class Bishop < Piece
   def move?(new_x, new_y)
-    if @x == new_x || @y == new_y
+    dx = (new_x - @x).abs
+    dy = (new_y - @y).abs
+
+    if dx == dy
       return true
     else
       return false
