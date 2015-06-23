@@ -10,6 +10,9 @@ moves = [
   { :start => [ 7, 7 ], :end => [ 0, 7 ], :expected => false },
   { :start => [ 7, 7 ], :end => [ 7, 0 ], :expected => false },
 
+  # out of bounds
+  { :start => [ 0, 0 ], :end => [ 42, 42 ], :expected => false },
+
   # valid rook moves
   { :start => [ 0, 0 ], :end => [ 0, 4 ], :expected => true },
   { :start => [ 7, 7 ], :end => [ 7, 3 ], :expected => true },
