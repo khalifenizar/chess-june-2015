@@ -17,7 +17,10 @@ class Board
     x = start[0]
     y = start[1]
 
-    if @board[x][y] == nil
+    new_x = endd[0]
+    new_y = endd[1]
+
+    if @board[x][y] == nil || @board[new_x][new_y] != nil
       return false
     else
       return true

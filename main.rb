@@ -4,7 +4,15 @@ board = Board.new
 moves = [
   # invalid starting position moves
   { :start => [ 2, 4 ], :end => [ 7, 7 ], :expected => false },
-  { :start => [ 6, 5 ], :end => [ 7, 7 ], :expected => false }
+  { :start => [ 6, 5 ], :end => [ 7, 7 ], :expected => false },
+
+  # piece at destination
+  { :start => [ 7, 7 ], :end => [ 0, 7 ], :expected => false },
+  { :start => [ 7, 7 ], :end => [ 7, 0 ], :expected => false },
+
+  # valid rook moves
+  { :start => [ 0, 0 ], :end => [ 0, 4 ], :expected => true },
+  { :start => [ 7, 7 ], :end => [ 7, 3 ], :expected => true },
 ]
 
 moves.each do |move|
