@@ -22,6 +22,8 @@ class Board
 
     if self.empty?(x, y) || !self.empty?(new_x, new_y)
       return false
+    elsif new_x > 7 || new_y > 7
+      return false
     else
       return true
     end
