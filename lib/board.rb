@@ -1,4 +1,4 @@
-require "pry"
+require_relative("rook.rb")
 
 class Board
   def initialize
@@ -7,10 +7,10 @@ class Board
       [], [], [], []
     ]
 
-    @board[0][0] = "rook"
-    @board[7][0] = "rook"
-    @board[0][7] = "rook"
-    @board[7][7] = "rook"
+    @board[0][0] = Rook.new(0, 0)
+    @board[7][0] = Rook.new(7, 0)
+    @board[0][7] = Rook.new(0, 7)
+    @board[7][7] = Rook.new(7, 7)
   end
 
   def valid_move?(start, endd)
@@ -25,7 +25,11 @@ class Board
     elsif new_x > 7 || new_y > 7
       return false
     else
-      return true
+        unless @board[x][y].move?(new_x, new_y)
+          return false
+        else
+          return true
+        end
     end
   end
 
