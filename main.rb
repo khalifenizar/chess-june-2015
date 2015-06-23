@@ -17,6 +17,11 @@ moves.each do |move|
   puts "#{conclusion}: #{move[:start]} --> #{move[:end]} = #{result}"
 end
 
+# a1 => 0, 0
+# h1 => 7, 0
+# a8 => 0, 7
+# h8 => 7, 7
+
 # a b c d e f g h
 # 0 1 2 3 4 5 6 7
 
